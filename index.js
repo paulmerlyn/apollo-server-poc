@@ -1,5 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer } = require('apollo-server')
 const SessionAPI = require('./datasources/sessions')
+const SpeakerAPI = require('./datasources/speakers')
 
 console.log('Here is:')
 console.log(new SessionAPI().getSessionById(2))
@@ -12,7 +13,8 @@ const resolvers = require('./resolvers')
 
 const dataSources = () => {
   return {
-    sessionAPI: new SessionAPI()
+    sessionAPI: new SessionAPI(),
+    speakerAPI: new SpeakerAPI()
   }
 }
 
