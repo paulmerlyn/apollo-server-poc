@@ -18,6 +18,9 @@ type Query {
     speakers(name: String): [Speaker]
     speakerById(id: ID): Speaker
 }
+type Mutation {
+  toggleFavoriteSession(id: ID): Session
+}
 type Session {
   id: ID,
   title: String,
@@ -29,6 +32,7 @@ type Session {
   format: String,
   track: String @deprecated(reason: "Too many sessions do not fit into a single track"),
   level: String
+  favorite: Boolean
   speakers: [Speaker]
 }
 type Speaker {

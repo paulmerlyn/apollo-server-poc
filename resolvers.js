@@ -15,6 +15,11 @@ module.exports = {
       return dataSources.speakerAPI.getSpeakerById(id)
     }
   },
+  Mutation: {
+    toggleFavoriteSession: (parent, { id }, { dataSources }, info) => {
+      return dataSources.sessionAPI.toggleFavoriteSession(id)
+    }
+  },
   Session: {
     async speakers (session, args, { dataSources }) {
       const speakers = await dataSources.speakerAPI.getSpeakers()
