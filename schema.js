@@ -8,7 +8,7 @@ type Query {
       description: String
       startsAt: String
       endsAt: String
-      room: String
+      room: Room
       day: String
       format: String
       track: String @deprecated(reason: "Too many sessions do not fit into a single track")
@@ -53,5 +53,14 @@ type Speaker {
   bio: String,
   name: String,
   sessions: [Session]
+}
+enum Room {
+  BEECH
+  ELM
+  OAK
+  SYCAMORE
+  BIRCH
+  PINE
+  REDWOOD
 }
 `

@@ -31,5 +31,14 @@ module.exports = {
       })
       return returns
     }
+  },
+  Room: {
+    BEECH: 'Beech',
+    ELM: 'Elm',
+    OAK: 'Oak',
+    SYCAMORE: 'Sycamore',
+    BIRCH: 'Birch',
+    PINE: 'Pine',
+    REDWOOD: 'Redwood'
   }
 }
