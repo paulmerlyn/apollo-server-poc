@@ -14,7 +14,7 @@ type Query {
       track: String @deprecated(reason: "Too many sessions do not fit into a single track")
       level: String
       ): [Session]
-    sessionById(id: ID): Session
+    sessionById(id: ID): SessionOrError
     speakers(name: String): [Speaker]
     speakerById(id: ID): Speaker
 }
@@ -22,6 +22,8 @@ type Mutation {
   toggleFavoriteSession(id: ID): Session
   addNewSession(session: SessionInput): Session
 }
+union SessionOrError = Session | Error
+
 input SessionInput {
   title: String,
   description: String,
@@ -53,6 +55,12 @@ type Speaker {
   bio: String,
   name: String,
   sessions: [Session]
+}
+
+type Error {
+  code: String
+  message: String
+  token: String
 }
 enum Room {
   BEECH
