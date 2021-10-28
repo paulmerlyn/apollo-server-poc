@@ -28,6 +28,7 @@ const server = new ApolloServer({
     if (err.extensions.code === 'INTERNAL_SERVER_ERROR') {
       return new ApolloError('We are having technical difficulties', 'ERROR', { token: 'uniqueToken' })
     }
+    return err
   }
 })
 
