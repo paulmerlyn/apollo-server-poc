@@ -1,3 +1,13 @@
+Since our Apollo server is set up (in index.js) to run on port 4000, visit localhost:4000
+and you'll see a landing page that will take you to the Apollo Studio "playground". Or you can hit your Apollo server directly via curl with a GraphQL client request such as this:
+
+curl --request POST \
+  --header 'content-type: application/json' \
+  --url http://localhost:4000/ \
+  --data '{"query":"query { __typename }"}'
+
+Apollo docs are here: https://www.apollographql.com/docs/apollo-server/api/plugin/landing-pages/
+
 To get the full functionality of this project, you'll need to run the mock REST endpoint server. Do that by navigating in my Darter Pro to: 
 
 ~/code/learning/graphQL/speakers/bin
