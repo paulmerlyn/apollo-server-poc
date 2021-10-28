@@ -26,6 +26,14 @@ class SessionAPI extends DataSource {
     filteredSessions[0].favorite = !filteredSessions[0].favorite
     return filteredSessions[0]
   }
+
+  addNewSession (session) {
+    console.log(typeof sessions) // even though we require() json file, it's imported as a JS object type
+    session.id = 12 // hard-coding for now
+    sessions.push(session)
+    console.log(session)
+    return session
+  }
 }
 
 module.exports = SessionAPI
